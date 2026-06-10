@@ -1,7 +1,6 @@
 ---
 import Sidebar from "@/components/sidebar.astro";
 import "../styles/global.css";
-import "../styles/scroll-viewport.css";
 ---
 
 <html lang="en">
@@ -15,7 +14,7 @@ import "../styles/scroll-viewport.css";
 	</head>
 	<body>
 		<Sidebar />
-		<main class="scroll-viewport custom-cursor-area background">
+		<main class="custom-cursor-area background">
 			<slot />
 		</main>
 
@@ -58,15 +57,6 @@ import "../styles/scroll-viewport.css";
 </script>
 
 <style>
-	html,
-	body {
-		overflow: hidden;
-		height: 100%;
-		margin: 0;
-		cursor: none;
-		scroll-behavior: smooth;
-	}
-
 	.background {
 		--dot-color: rgba(10, 20, 114, 0.15);
 		--dot-size: 2px;
