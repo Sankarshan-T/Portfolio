@@ -1,0 +1,50 @@
+---
+import { Button } from "./ui/button";
+
+interface Language {
+    icon: string;
+    name: string;
+    level: number;
+}
+
+const languages: Language[] = [
+    { icon: "/languages/gdscript.png", name: "GDScript", level: 9 },
+    { icon: "/languages/python.png", name: "Python", level: 8 },
+    { icon: "/languages/csharp.png", name: "C#", level: 2 },
+    { icon: "/languages/html.png", name: "HTML", level: 10 },
+    { icon: "/languages/css.png", name: "CSS", level: 10 },
+    { icon: "/languages/js.png", name: "JavaScript", level: 9 },
+    { icon: "/languages/tailwind.png", name: "Tailwind CSS", level: 10 },
+    { icon: "/languages/ts.png", name: "TypeScript", level: 8 },
+    { icon: "/languages/react.png", name: "React", level: 7 },
+    { icon: "/languages/next.png", name: "Next.JS", level: 9 },
+    { icon: "/languages/vite.png", name: "Vite", level: 5 },
+    { icon: "/languages/astro.png", name: "Astro", level: 8 },
+    { icon: "/languages/svelte.png", name: "Svelte", level: 4 },
+];
+---
+
+<div class="h-screen w-full flex flex-col items-center justify-center gap-y-2">
+    <h1 class="text-4xl font-bold text-blue-900 font-mono">
+        Languages im famliar with
+    </h1>
+    <div class="p-5 w-[85%] grid grid-cols-4 gap-4">
+        {
+            languages.map((lang) => (
+                <div class="bg-blue-100/50 backdrop-blur-xl border-2 border-blue-400 rounded-2xl shadow-lg shadow-blue-400 p-3 flex items-center gap-x-4 justify-between text-right">
+                    <img
+                        src={lang.icon}
+                        alt=""
+                        class="w-12 object-contain rounded mix-blend-multiply "
+                    />
+                    <div>
+                        <p class="text-md font-bold font-mono text-blue-900">
+                            {lang.name}
+                        </p>
+                        <p class="text-xs">Proficieny: {lang.level}/10</p>
+                    </div>
+                </div>
+            ))
+        }
+    </div>
+</div>
