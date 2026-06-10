@@ -1,0 +1,43 @@
+---
+import { Home, Info, Languages, Blocks } from "@lucide/astro";
+import Hint from "./hint";
+---
+
+<aside
+    class="fixed top-1/2 -translate-y-1/2 left-5 h-[40vh] px-3 bg-blue-100/50 backdrop-blur-2xl border-2 border-blue-400 rounded-2xl shadow-lg shadow-blue-400"
+>
+    <div
+        class="h-full w-full flex flex-col items-center justify-evenly gap-y-2"
+    >
+        <Hint label="Home" side="right" sideOffset={10} client:load>
+            <a href="#">
+                <Home
+                    class="hover:-translate-y-0.75 text-blue-700 hover:text-blue-900 transition"
+                />
+            </a>
+        </Hint>
+
+        <Hint label="About" side="right" sideOffset={10} client:load>
+            <a href="#about">
+                <Info
+                    class="hover:-translate-y-0.75 text-blue-700 hover:text-blue-900 transition"
+                />
+            </a>
+        </Hint>
+
+        <Hint label="Languages" side="right" sideOffset={10} client:load>
+            <a href="#languages">
+                <Languages
+                    class="hover:-translate-y-0.75 text-blue-700 hover:text-blue-900 transition"
+                />
+            </a>
+        </Hint>
+        <Hint label="Projects" side="right" sideOffset={10} client:load>
+            <a href="#projects">
+                <Blocks
+                    class="hover:-translate-y-0.75 text-blue-700 hover:text-blue-900 transition"
+                />
+            </a>
+        </Hint>
+    </div>
+</aside>

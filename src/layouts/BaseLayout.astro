@@ -1,0 +1,83 @@
+---
+import Sidebar from "@/components/sidebar.astro";
+import "../styles/global.css";
+import "../styles/scroll-viewport.css";
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="icon" href="/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro</title>
+	</head>
+	<body>
+		<Sidebar />
+		<main class="scroll-viewport custom-cursor-area background">
+			<slot />
+		</main>
+
+		<div id="cursor-normal"></div>
+		<div id="cursor-pointer"></div>
+	</body>
+</html>
+
+<script>
+	const cursorNormal = document.getElementById("cursor-normal");
+	const cursorPointer = document.getElementById("cursor-pointer");
+
+	const mouse = { x: 0, y: 0 };
+	const normalPos = { x: 0, y: 0 };
+	const pointerPos = { x: 0, y: 0 };
+
+	const speedNormal = 0.25;
+	const speedPointer = 0.18;
+
+	window.addEventListener("mousemove", (e: MouseEvent) => {
+		mouse.x = e.clientX;
+		mouse.y = e.clientY;
+	});
+
+	const animateCursors = () => {
+		if (cursorNormal && cursorPointer) {
+			normalPos.x += (mouse.x - normalPos.x) * speedNormal;
+			normalPos.y += (mouse.y - normalPos.y) * speedNormal;
+
+			pointerPos.x += (mouse.x - pointerPos.x) * speedPointer;
+			pointerPos.y += (mouse.y - pointerPos.y) * speedPointer;
+
+			cursorNormal.style.transform = `translate3d(${normalPos.x - 5}px, ${normalPos.y - 5}px, 0)`;
+			cursorPointer.style.transform = `translate3d(${pointerPos.x - 7.5}px, ${pointerPos.y - 7.5}px, 0)`;
+		}
+		requestAnimationFrame(animateCursors);
+	};
+
+	requestAnimationFrame(animateCursors);
+</script>
+
+<style>
+	html,
+	body {
+		overflow: hidden;
+		height: 100%;
+		margin: 0;
+		cursor: none;
+		scroll-behavior: smooth;
+	}
+
+	.background {
+		--dot-color: rgba(10, 20, 114, 0.15);
+		--dot-size: 2px;
+		--dot-space: 24px;
+
+		background-image: radial-gradient(
+			circle at var(--dot-size) var(--dot-size),
+			var(--dot-color) var(--dot-size),
+			transparent 0
+		);
+		background-size: var(--dot-space) var(--dot-space);
+		background-color: #94cfff;
+	}
+</style>
