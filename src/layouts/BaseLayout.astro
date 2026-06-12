@@ -13,15 +13,15 @@ import "../styles/global.css";
 	</head>
 	<body>
 		<Sidebar />
-		
+
 		<main
 			class="custom-cursor-area background min-h-screen w-full overflow-x-hidden"
 		>
 			<slot />
 		</main>
 
-		<div id="cursor-normal" class="hidden md:block"></div>
-		<div id="cursor-pointer" class="hidden md:block"></div>
+		<div id="cursor-normal" class="hidden md:block lg:block"></div>
+		<div id="cursor-pointer" class="hidden md:block lg:block"></div>
 	</body>
 </html>
 

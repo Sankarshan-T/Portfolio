@@ -1,18 +1,130 @@
 ---
+import { Button } from "../ui/button";
+import { ExternalLink, CodeXml } from "@lucide/astro";
 
+interface Project {
+    title: string;
+    description: string;
+    tags: string[];
+    githubUrl?: string;
+    liveUrl?: string;
+    featured?: boolean;
+}
+
+const projects: Project[] = [
+    {
+        title: "Color Blast",
+        description:
+            "A cool ‘chrome extension’ which allows you to find any color on a website and add it to a color pallet.",
+        tags: ["HTML", "CSS", "JavaScript", "Extension"],
+        liveUrl:
+            "https://github.com/Sankarshan-T/Color-Blast/releases/tag/v1.0.0",
+        githubUrl: "https://color-blast-seven.vercel.app/",
+    },
+    {
+        title: "Inkly",
+        description:
+            "A collaborative whiteboard built using next.js For computers, laptops and tablets",
+        tags: ["Nextjs", "Whiteboard", "Typescript"],
+        githubUrl: "https://github.com/Sankarshan-T/Inkly",
+        liveUrl: "https://inkly-whiteboard.vercel.app",
+        featured: true,
+    },
+    {
+        title: "Alchemize Season 1",
+        description:
+            "Create a project related to the mini-themes or you own and get awesome prizes. With a dynamic shop and dynamic currencies!",
+        tags: ["Svelte", "TypeScript", "Tailwind"],
+        githubUrl: "https://github.com/Sankarshan-T/Alchemize",
+        liveUrl: "https://alchemize.hackclub.com/",
+    },
+];
 ---
 
-<div
-    class="min-h-screen w-full flex flex-col items-center justify-center gap-y-4 p-4"
->
-    <h1
-        class="text-2xl sm:text-4xl font-bold text-blue-900 font-mono text-center"
-    >
-        Cool projects I've made
-    </h1>
+<div class="min-h-screen w-full flex items-center justify-center">
     <div
-        class="p-5 px-10 w-full max-w-4xl gap-4 flex items-center justify-center"
+        class="h-full w-full flex flex-col items-center justify-center gap-y-4 p-4 py-16 md:py-0"
     >
-        <p class="text-xs text-muted-foreground">Work in progress...</p>
+        <div class="text-center max-w-xl flex flex-col items-center gap-y-2">
+            <h1
+                class="text-3xl sm:text-4xl font-bold text-blue-900 font-mono tracking-tight flex items-center gap-x-2"
+            >
+                <CodeXml class="size-8 text-blue-700" /> Cool Projects I've Made
+            </h1>
+            <p class="text-sm text-blue-800/80 font-light px-4">
+                A collection of things I've built since joining Hack Club,
+                spanning web apps, games, and tools.
+            </p>
+        </div>
+
+        <div
+            class="w-full max-w-5xl grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-2 sm:px-6"
+        >
+            {
+                projects.map((project) => (
+                    <div class="bg-blue-100/40 backdrop-blur-xl border-2 border-blue-400 rounded-2xl shadow-md shadow-blue-400/30 p-5 flex flex-col justify-between hover:-translate-y-1 hover:shadow-lg hover:shadow-blue-400/50 transition-all duration-300 group">
+                        <div>
+                            <div class="flex items-start justify-between gap-x-2 mb-3">
+                                <h3 class="text-lg font-bold font-mono text-blue-900 group-hover:text-blue-950 transition">
+                                    {project.title}
+                                </h3>
+                                {project.featured && (
+                                    <span class="text-[10px] uppercase tracking-wider bg-blue-500 text-white font-mono px-2 py-0.5 rounded-full border border-blue-600 shadow-sm">
+                                        Featured
+                                    </span>
+                                )}
+                            </div>
+
+                            <p class="text-sm text-blue-800 font-light leading-relaxed mb-4">
+                                {project.description}
+                            </p>
+                        </div>
+
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-5">
+                                {project.tags.map((tag) => (
+                                    <span class="text-xs font-mono bg-blue-200/60 text-blue-900 px-2 py-0.5 rounded-md border border-blue-300/40">
+                                        {tag}
+                                    </span>
+                                ))}
+                            </div>
+
+                            <div class="flex items-center gap-x-3 pt-2 border-t border-blue-300/30">
+                                {project.githubUrl && (
+                                    <a
+                                        href={project.githubUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="flex items-center gap-x-1.5 text-xs font-mono text-blue-700 hover:text-blue-900 transition"
+                                    >
+                                        <CodeXml class="size-4" /> Source Code
+                                    </a>
+                                )}
+                                {project.liveUrl && (
+                                    <a
+                                        href={project.liveUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        class="flex items-center gap-x-1.5 text-xs font-mono text-blue-700 hover:text-blue-900 transition ml-auto"
+                                    >
+                                        <ExternalLink class="size-4" /> Live
+                                        Demo
+                                    </a>
+                                )}
+                            </div>
+                        </div>
+                    </div>
+                ))
+            }
+        </div>
+
+        <a href="/projects" class="mt-4">
+            <Button
+                variant="outline"
+                className="border-blue-400 text-blue-900 bg-blue-200 hover:bg-blue-200/50 font-mono text-xs"
+            >
+                See more of my projects here!
+            </Button>
+        </a>
     </div>
 </div>
