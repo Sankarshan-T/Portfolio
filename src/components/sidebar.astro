@@ -1,5 +1,5 @@
 ---
-import { Home, Info, Languages, Blocks } from "@lucide/astro";
+import { Home, Info, Languages, Blocks, Contact } from "@lucide/astro";
 import Hint from "./hint";
 ---
 
@@ -35,6 +35,13 @@ import Hint from "./hint";
         <Hint label="Projects" side="right" sideOffset={10} client:load>
             <a href="#projects">
                 <Blocks
+                    class="hover:-translate-y-0.75 text-blue-700 hover:text-blue-900 transition"
+                />
+            </a>
+        </Hint>
+        <Hint label="Contact me" side="right" sideOffset={10} client:load>
+            <a href="#contact">
+                <Contact
                     class="hover:-translate-y-0.75 text-blue-700 hover:text-blue-900 transition"
                 />
             </a>
