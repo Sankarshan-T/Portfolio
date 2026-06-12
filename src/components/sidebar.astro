@@ -4,45 +4,80 @@ import Hint from "./hint";
 ---
 
 <aside
-    class="fixed top-1/2 -translate-y-1/2 left-5 h-[40vh] px-3 bg-blue-100/50 backdrop-blur-xl border-2 border-blue-400 rounded-2xl shadow-lg shadow-blue-400 z-999"
+    class="fixed z-[999] p-3 backdrop-blur-xl bg-blue-100/50 border-2 border-blue-400 rounded-2xl shadow-lg shadow-blue-400 transition-all duration-300
+    bottom-4 left-1/2 -translate-x-1/2 w-[90%] max-w-md
+    md:bottom-auto md:left-5 md:top-1/2 md:-translate-y-1/2 md:translate-x-0 md:w-auto md:h-auto"
 >
     <div
-        class="h-full w-full flex flex-col items-center justify-evenly gap-y-2"
+        class="h-full w-full flex flex-row items-center justify-evenly gap-x-2
+        md:flex-col md:gap-y-3 md:gap-x-0 md:min-h-[40vh]"
     >
-        <Hint label="Home" side="right" sideOffset={10} client:load>
+        <Hint
+            label="Home"
+            side="top"
+            md-side="right"
+            sideOffset={10}
+            client:load
+        >
             <a href="#">
                 <Home
-                    class="hover:-translate-y-0.75 text-blue-700 hover:text-blue-900 transition"
+                    class="hover:-translate-y-0.75 text-blue-700 hover:text-blue-900 transition size-5 sm:size-6"
                 />
             </a>
         </Hint>
 
-        <Hint label="About" side="right" sideOffset={10} client:load>
+        <Hint
+            label="About"
+            side="top"
+            md-side="right"
+            sideOffset={10}
+            client:load
+        >
             <a href="#about">
                 <Info
-                    class="hover:-translate-y-0.75 text-blue-700 hover:text-blue-900 transition"
+                    class="hover:-translate-y-0.75 text-blue-700 hover:text-blue-900 transition size-5 sm:size-6"
                 />
             </a>
         </Hint>
 
-        <Hint label="Languages" side="right" sideOffset={10} client:load>
+        <Hint
+            label="Languages"
+            side="top"
+            md-side="right"
+            sideOffset={10}
+            client:load
+        >
             <a href="#languages">
                 <Languages
-                    class="hover:-translate-y-0.75 text-blue-700 hover:text-blue-900 transition"
+                    class="hover:-translate-y-0.75 text-blue-700 hover:text-blue-900 transition size-5 sm:size-6"
                 />
             </a>
         </Hint>
-        <Hint label="Projects" side="right" sideOffset={10} client:load>
+
+        <Hint
+            label="Projects"
+            side="top"
+            md-side="right"
+            sideOffset={10}
+            client:load
+        >
             <a href="#projects">
                 <Blocks
-                    class="hover:-translate-y-0.75 text-blue-700 hover:text-blue-900 transition"
+                    class="hover:-translate-y-0.75 text-blue-700 hover:text-blue-900 transition size-5 sm:size-6"
                 />
             </a>
         </Hint>
-        <Hint label="Contact me" side="right" sideOffset={10} client:load>
+
+        <Hint
+            label="Contact me"
+            side="top"
+            md-side="right"
+            sideOffset={10}
+            client:load
+        >
             <a href="#contact">
                 <Contact
-                    class="hover:-translate-y-0.75 text-blue-700 hover:text-blue-900 transition"
+                    class="hover:-translate-y-0.75 text-blue-700 hover:text-blue-900 transition size-5 sm:size-6"
                 />
             </a>
         </Hint>
