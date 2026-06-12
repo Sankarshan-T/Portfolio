@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Color Blast",
+        "description": "A cool Chrome extension which allows you to find any color on a website and add it to a custom palette.",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Extension"
+        ],
+        "githubUrl": "https://github.com/Sankarshan-T/Color-Blast",
+        "liveUrl": "https://github.com/Sankarshan-T/Color-Blast/releases/tag/v1.0.0",
+        "featured": true
+    },
+    {
+        "title": "Inkly",
+        "description": "A collaborative whiteboard built using Next.js designed smoothly for computers, laptops, and tablets.",
+        "tags": [
+            "Next.js",
+            "Whiteboard",
+            "TypeScript"
+        ],
+        "githubUrl": "https://github.com/Sankarshan-T/Inkly",
+        "liveUrl": "https://inkly-whiteboard.vercel.app",
+        "featured": true
+    },
+    {
+        "title": "Alchemize Season 1",
+        "description": "Create a project related to the mini-themes or your own and get awesome prizes with a dynamic shop and currencies!",
+        "tags": [
+            "Svelte",
+            "TypeScript",
+            "Tailwind"
+        ],
+        "githubUrl": "https://github.com/Sankarshan-T/Alchemize",
+        "liveUrl": "https://alchemize.hackclub.com/"
+    }
+]
