@@ -1,6 +1,4 @@
 ---
-import { Button } from "./ui/button";
-
 interface Language {
     icon: string;
     name: string;
@@ -31,11 +29,11 @@ const languages: Language[] = [
     <div class="p-5 w-[85%] grid grid-cols-4 gap-4">
         {
             languages.map((lang) => (
-                <div class="bg-blue-100/50 backdrop-blur-xl border-2 border-blue-400 rounded-2xl shadow-lg shadow-blue-400 p-3 flex items-center gap-x-4 justify-between text-right hover:-translate-y-0.5 transition">
+                <div class="bg-blue-100/50 backdrop-blur-xl border-2 border-blue-400 rounded-2xl shadow-lg shadow-blue-400 p-3 flex items-center gap-x-4 justify-between text-right hover:-translate-y-0.5 transition group ">
                     <img
                         src={lang.icon}
                         alt=""
-                        class="w-12 object-contain rounded mix-blend-multiply "
+                        class="w-12 object-contain rounded mix-blend-multiply group-hover:scale-90 transition"
                     />
                     <div>
                         <p class="text-md font-bold font-mono text-blue-900">
