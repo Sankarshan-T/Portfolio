@@ -22,24 +22,32 @@ const languages: Language[] = [
 ];
 ---
 
-<div class="h-screen w-full flex flex-col items-center justify-center gap-y-2">
-    <h1 class="text-4xl font-bold text-blue-900 font-mono">
-        Languages im famliar with
+<div
+    class="min-h-screen w-full flex flex-col items-center justify-center gap-y-4 p-4 py-16 md:py-0"
+>
+    <h1
+        class="text-2xl sm:text-4xl font-bold text-blue-900 font-mono text-center"
+    >
+        Languages im familiar with
     </h1>
-    <div class="p-5 w-[85%] grid grid-cols-4 gap-4">
+    <div
+        class="p-2 sm:p-5 w-full max-w-5xl grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4"
+    >
         {
             languages.map((lang) => (
-                <div class="bg-blue-100/50 backdrop-blur-xl border-2 border-blue-400 rounded-2xl shadow-lg shadow-blue-400 p-3 flex items-center gap-x-4 justify-between text-right hover:-translate-y-0.5 transition group ">
+                <div class="bg-blue-100/50 backdrop-blur-xl border-2 border-blue-400 rounded-2xl shadow-lg shadow-blue-400 p-4 flex items-center gap-x-4 justify-between text-right hover:-translate-y-0.5 transition group">
                     <img
                         src={lang.icon}
                         alt=""
-                        class="w-12 object-contain rounded mix-blend-multiply group-hover:scale-90 transition"
+                        class="w-10 sm:w-12 h-10 sm:h-12 object-contain rounded mix-blend-multiply group-hover:scale-90 transition"
                     />
                     <div>
-                        <p class="text-md font-bold font-mono text-blue-900">
+                        <p class="text-sm sm:text-md font-bold font-mono text-blue-900">
                             {lang.name}
                         </p>
-                        <p class="text-xs">Proficieny: {lang.level}/10</p>
+                        <p class="text-xs text-blue-800">
+                            Proficiency: {lang.level}/10
+                        </p>
                     </div>
                 </div>
             ))

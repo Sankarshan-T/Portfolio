@@ -3,22 +3,25 @@ import Sidebar from "@/components/sidebar.astro";
 import "../styles/global.css";
 ---
 
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" href="/favicon.png" type="image/png" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="generator" content={Astro.generator} />
 		<title>coolcream</title>
 	</head>
 	<body>
 		<Sidebar />
-		<main class="custom-cursor-area background">
+		
+		<main
+			class="custom-cursor-area background min-h-screen w-full overflow-x-hidden"
+		>
 			<slot />
 		</main>
 
-		<div id="cursor-normal"></div>
-		<div id="cursor-pointer"></div>
+		<div id="cursor-normal" class="hidden md:block"></div>
+		<div id="cursor-pointer" class="hidden md:block"></div>
 	</body>
 </html>
 
@@ -26,20 +29,20 @@ import "../styles/global.css";
 	const cursorNormal = document.getElementById("cursor-normal");
 	const cursorPointer = document.getElementById("cursor-pointer");
 
-	const mouse = { x: 0, y: 0 };
-	const normalPos = { x: 0, y: 0 };
-	const pointerPos = { x: 0, y: 0 };
+	if (window.innerWidth >= 768 && cursorNormal && cursorPointer) {
+		const mouse = { x: 0, y: 0 };
+		const normalPos = { x: 0, y: 0 };
+		const pointerPos = { x: 0, y: 0 };
 
-	const speedNormal = 0.25;
-	const speedPointer = 0.18;
+		const speedNormal = 0.25;
+		const speedPointer = 0.18;
 
-	window.addEventListener("mousemove", (e: MouseEvent) => {
-		mouse.x = e.clientX;
-		mouse.y = e.clientY;
-	});
+		window.addEventListener("mousemove", (e: MouseEvent) => {
+			mouse.x = e.clientX;
+			mouse.y = e.clientY;
+		});
 
-	const animateCursors = () => {
-		if (cursorNormal && cursorPointer) {
+		const animateCursors = () => {
 			normalPos.x += (mouse.x - normalPos.x) * speedNormal;
 			normalPos.y += (mouse.y - normalPos.y) * speedNormal;
 
@@ -48,11 +51,12 @@ import "../styles/global.css";
 
 			cursorNormal.style.transform = `translate3d(${normalPos.x - 5}px, ${normalPos.y - 5}px, 0)`;
 			cursorPointer.style.transform = `translate3d(${pointerPos.x - 7.5}px, ${pointerPos.y - 7.5}px, 0)`;
-		}
-		requestAnimationFrame(animateCursors);
-	};
 
-	requestAnimationFrame(animateCursors);
+			requestAnimationFrame(animateCursors);
+		};
+
+		requestAnimationFrame(animateCursors);
+	}
 </script>
 
 <style>
@@ -68,5 +72,11 @@ import "../styles/global.css";
 		);
 		background-size: var(--dot-space) var(--dot-space);
 		background-color: #94cfff;
+	}
+
+	@media (min-width: 768px) {
+		.custom-cursor-area {
+			cursor: none;
+		}
 	}
 </style>

@@ -2,15 +2,17 @@
 import { Button } from "../ui/button";
 ---
 
-<div class="h-screen w-full flex items-center justify-center">
+<div
+    class="min-h-screen w-full flex items-center justify-center p-4 py-16 md:py-0"
+>
     <div
-        class="flex flex-col items-start justify-start gap-y-2 w-[85%] bg-blue-100/50 backdrop-blur-xl border-2 border-blue-400 rounded-2xl shadow-lg shadow-blue-400 p-5"
+        class="flex flex-col items-start justify-start gap-y-4 w-full max-w-4xl bg-blue-100/50 backdrop-blur-xl border-2 border-blue-400 rounded-2xl shadow-lg shadow-blue-400 p-5 md:p-8"
     >
         <div>
-            <h1 class="text-2xl font-mono text-blue-900">
+            <h1 class="text-xl sm:text-2xl font-mono text-blue-900 mb-2">
                 Im Sankarshan. aka coolcream!
             </h1>
-            <p class="text-blue-800 text-sm">
+            <p class="text-blue-800 text-sm leading-relaxed">
                 and I code a lot... and by a lot, I mean a <strong>lot</strong>.
                 I make a lot of applications, especially websites. I stared
                 programming when I was 9... back then, I mostly used to make
@@ -19,7 +21,7 @@ import { Button } from "../ui/button";
                 programs.
             </p>
         </div>
-        <p class="text-indigo-900 text-sm">
+        <p class="text-indigo-900 text-sm leading-relaxed">
             Soon, I lost interest and left programming for a while because I had
             no idea what to make. But then after almost a year, I gained back my
             old interest in this field and decided to learn Unity. It was a
@@ -28,7 +30,7 @@ import { Button } from "../ui/button";
             up with unity for too long. The same time, i also learnt a bit of
             html. Plain html no css and no JS.
         </p>
-        <p class="text-blue-900 text-sm">
+        <p class="text-blue-900 text-sm leading-relaxed">
             This was interesting to me and i worked on it for sometime... and
             that was until I joined Hack Club. I took in coding seriously and
             actually learnt more than I had ever known before. I started making
@@ -37,19 +39,21 @@ import { Button } from "../ui/button";
             became more interested in UI designing, but I also kept a fair
             knowledge about the backend part of what I made.
         </p>
-        <p class="text-blue-950 text-sm">
+        <p class="text-blue-950 text-sm leading-relaxed">
             Then I went forward and explored languages I had never known about
             before like Svelte, Astro, and Vite. All these languages were
             awesome and I got to know more about the programming world!
         </p>
-        <div class="flex items-center justify-center gap-x-3 mt-3">
-            <a href="#languages">
-                <Button className="py-5 text-sm font-mono">
+        <div
+            class="flex flex-col sm:flex-row items-center justify-start gap-3 mt-3 w-full"
+        >
+            <a href="#languages" class="w-full sm:w-auto">
+                <Button className="py-5 text-xs sm:text-sm font-mono w-full">
                     Here are the list of languages I know
                 </Button>
             </a>
-            <a href="#projects">
-                <Button className="py-5 text-sm font-mono">
+            <a href="#projects" class="w-full sm:w-auto">
+                <Button className="py-5 text-xs sm:text-sm font-mono w-full">
                     Or the list of cool projects I made
                 </Button>
             </a>
