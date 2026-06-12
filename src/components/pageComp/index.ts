@@ -1,4 +1,4 @@
-export { default as Home } from "./Home.astro";
-export { default as About } from "./About.astro";
-export { default as Languages } from "./Languages.astro";
-export { default as Projects } from "./Projects.astro";
+export { default as Home } from "./home.astro";
+export { default as About } from "./about.astro";
+export { default as Languages } from "./languages.astro";
+export { default as Projects } from "./projects.astro";
