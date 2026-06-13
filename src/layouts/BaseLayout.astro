@@ -26,6 +26,12 @@ import "../styles/global.css";
 </html>
 
 <script>
+	import { initEasterEggs } from "../lib/funny.js";
+
+	initEasterEggs();
+
+	document.addEventListener("astro:page-load", initEasterEggs);
+
 	const cursorNormal = document.getElementById("cursor-normal");
 	const cursorPointer = document.getElementById("cursor-pointer");
 
