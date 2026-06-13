@@ -110,5 +110,58 @@
         ],
         "githubUrl": "https://github.com/Sankarshan-T/GlowTab",
         "liveUrl": "https://glow-tab.vercel.app/"
+    },
+    {
+        "title": "Robo-Racer",
+        "description": "Building a RC racing robot capable of navigating sand pits, ramps and a lot more fun stuff",
+        "tags": [
+            "Hardware",
+            "ESC",
+            "3d-printed"
+        ],
+        "githubUrl": "https://github.com/Sankarshan-T/Robo-Racer"
+    },
+    {
+        "title": "Out of Range",
+        "description": "Acquire energy points to reach the next level, one by one, until you're back on Platform 0—Ground Floor.",
+        "tags": [
+            "Godot",
+            "Game",
+            "Gd Script"
+        ],
+        "githubUrl": "https://github.com/Sankarshan-T/Out-of-range",
+        "liveUrl": "https://coolcream.itch.io/out-of-range"
+    },
+    {
+        "title": "Utility Toolbox",
+        "description": "A web utility toolbox. A single website with multiple small utilities",
+        "tags": [
+            "HTMl",
+            "CSS",
+            "Used AI"
+        ],
+        "githubUrl": "https://github.com/Sankarshan-T/Utility-Toolbox",
+        "liveUrl": "https://utility-toolbox.vercel.app/"
+    },
+    {
+        "title": "Vault Check",
+        "description": "A simple program that helps you analyze if the given password is strong enough",
+        "tags": [
+            "HTMl",
+            "CSS",
+            "Used AI"
+        ],
+        "githubUrl": "https://github.com/Sankarshan-T/Vault-Check",
+        "liveUrl": "https://sankarshan-t.github.io/Vault-Check/"
+    },
+    {
+        "title": "Hecatomb",
+        "description": "Hecatomb is a simple but intense action game made in the Godot engine where the main goal is to survive… but at a cost.",
+        "tags": [
+            "Godot",
+            "Gd Script"
+        ],
+        "githubUrl": "https://github.com/Sankarshan-T/Hecatombrepo",
+        "liveUrl": "https://avalynndev.itch.io/hecatomb"
     }
 ]
