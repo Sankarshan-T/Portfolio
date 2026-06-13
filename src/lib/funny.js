@@ -1,10 +1,9 @@
 export function initEasterEggs() {
     console.log(
-        "%c🧊 Hmmmph so you managed to get here i see...",
+        "%c🧊 Hmmmph so you managed to get here i see... 😩",
         "color: #1e3a8a; font-size: 16px; font-weight: bold; font-family: monospace; background: #dbeafe; padding: 8px; border-radius: 4px;"
     );
     console.log("Check out my source code on GitHub: github.com/Sankarshan-T/porfolio");
-
 
     window.addEventListener('contextmenu', (e) => {
         //if (e.target.closest('a') || e.target.closest('button')) return;
@@ -19,8 +18,7 @@ export function initEasterEggs() {
         setTimeout(() => banner.remove(), 3000);
     });
 
-
-    window.addEventListener('click', (e) => {
+    window.addEventListener('dblclick', (e) => {
         if (e.target.closest('a') || e.target.closest('button')) return;
 
         const particle = document.createElement('div');
@@ -38,7 +36,6 @@ export function initEasterEggs() {
 
         setTimeout(() => particle.remove(), 1000);
     });
-
 
     const originalTitle = document.title || "coolcream";
     window.addEventListener('blur', () => {
