@@ -1,50 +1,95 @@
 ---
 import { Button } from "../ui/button";
+import { Terminal, Milestone, Sparkles } from "@lucide/astro";
 ---
 
 <div
     class="min-h-screen w-full flex items-center justify-center p-4 py-16 md:py-0"
 >
     <div
-        class="flex flex-col items-start justify-start gap-y-4 w-full max-w-4xl bg-blue-100/50 backdrop-blur-xl border-2 border-blue-400 rounded-2xl shadow-lg shadow-blue-400 p-5 md:p-8"
+        class="flex flex-col items-start justify-start gap-y-6 w-full max-w-5xl p-6 md:p-8"
     >
         <div>
-            <h1 class="text-xl sm:text-2xl font-mono text-blue-900 mb-2">
-                Im Sankarshan. aka coolcream!
+            <h1
+                class="text-2xl sm:text-3xl font-mono font-bold text-blue-900 mb-2 tracking-tight"
+            >
+                Hi! I'm coolcream.
             </h1>
-            <p class="text-blue-800 text-sm leading-relaxed">
-                and I code a lot... and by a lot, I mean a <strong>lot</strong>.
-                I make a lot of applications, especially websites. I stared
-                programming when I was 9... back then, I mostly used to make
-                games... first in scratch, then Godot. I also used to code in
-                basic python. Not any full aplication, but small sippets and
-                programs.
+            <p class="text-blue-800 text-sm leading-relaxed max-w-2xl">
+                I'm a full-stack developer focused on building web applications
+                and UI designs. My coding journey started early and accelerated
+                when I joined Hack Club.
             </p>
         </div>
-        <p class="text-blue-900 text-sm leading-relaxed">
-            After I joined Hack Club. I took in coding seriously and actually
-            learnt more than I had ever known before. I started making full
-            websites with htm css and JS, I made cool python applications and I
-            also learnt new languages like React, Next Js, and Tailwind. I
-            became more interested in UI designing, but I also kept a fair
-            knowledge about the backend part of what I made.
-        </p>
-        <p class="text-blue-950 text-sm leading-relaxed">
-            Then I went forward and explored languages I had never known about
-            before like Svelte, Astro, and Vite. All these languages were
-            awesome and are just too good!
-        </p>
+        <div class="w-full flex flex-col gap-y-3">
+            <h2
+                class="text-xs font-mono uppercase tracking-wider text-blue-900/60 font-bold"
+            >
+                My Journey
+            </h2>
+
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 w-full">
+                <div
+                    class="flex flex-col p-3.5 bg-blue-200/40 border border-blue-400/40 rounded-xl hover:bg-blue-200/60 transition duration-200"
+                >
+                    <span
+                        class="flex items-center gap-x-1.5 text-xs font-mono font-bold text-blue-900 mb-1"
+                    >
+                        <Terminal class="size-3.5 text-blue-600" /> Age 9
+                    </span>
+                    <p class="text-xs text-blue-800 leading-normal">
+                        Started out making retro games in Scratch and Godot,
+                        alongside basic Python scripts.
+                    </p>
+                </div>
+
+                <div
+                    class="flex flex-col p-3.5 bg-blue-200/40 border border-blue-400/40 rounded-xl hover:bg-blue-200/60 transition duration-200"
+                >
+                    <span
+                        class="flex items-center gap-x-1.5 text-xs font-mono font-bold text-blue-900 mb-1"
+                    >
+                        <Milestone class="size-3.5 text-blue-600" /> Hack Club
+                    </span>
+                    <p class="text-xs text-blue-800 leading-normal">
+                        Leveled up into full web dev, almost mastering React,
+                        Next.js, UI designing, and backend basics.
+                    </p>
+                </div>
+
+                <div
+                    class="flex flex-col p-3.5 bg-blue-200/40 border border-blue-400/40 rounded-xl hover:bg-blue-200/60 transition duration-200"
+                >
+                    <span
+                        class="flex items-center gap-x-1.5 text-xs font-mono font-bold text-blue-900 mb-1"
+                    >
+                        <Sparkles class="size-3.5 text-blue-600" /> Right Now
+                    </span>
+                    <p class="text-xs text-blue-800 leading-normal">
+                        Exploring modern tools like Svelte, Astro, and Vite to
+                        build cool stuff and learning backed structure.
+                    </p>
+                </div>
+            </div>
+        </div>
+
         <div
-            class="flex flex-col sm:flex-row items-center justify-start gap-3 mt-3 w-full"
+            class="flex flex-col sm:flex-row items-center justify-start gap-3 mt-2 w-full"
         >
             <a href="#languages" class="w-full sm:w-auto">
-                <Button className="py-5 text-xs sm:text-sm font-mono w-full">
-                    Here are the list of languages I know
+                <Button
+                    className="py-4 text-xs font-mono w-full"
+                    variant="default"
+                >
+                    View My Stack
                 </Button>
             </a>
             <a href="#projects" class="w-full sm:w-auto">
-                <Button className="py-5 text-xs sm:text-sm font-mono w-full">
-                    Or the list of cool projects I made
+                <Button
+                    className="py-4 text-xs font-mono w-full"
+                    variant="outline"
+                >
+                    Explore Projects
                 </Button>
             </a>
         </div>
