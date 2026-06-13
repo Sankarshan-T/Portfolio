@@ -34,5 +34,81 @@
         ],
         "githubUrl": "https://github.com/Sankarshan-T/Alchemize",
         "liveUrl": "https://alchemize.hackclub.com/"
+    },
+    {
+        "title": "Whitespace.io",
+        "description": "An all in one whiteboard, document editor and diagrams editor. Full of un-imaginabe features.",
+        "tags": [
+            "Next.js",
+            "Convex",
+            "Excalidraw"
+        ],
+        "githubUrl": "https://github.com/Sankarshan-T/whitespace.io",
+        "liveUrl": "https://whitespace-io.vercel.app/"
+    },
+    {
+        "title": "Hack Club Help",
+        "description": "A help site for Hackclub",
+        "tags": [
+            "Vite",
+            "CSS"
+        ],
+        "githubUrl": "https://github.com/Sankarshan-T/hackclub-help",
+        "liveUrl": "https://help.hackclub.com"
+    },
+    {
+        "title": "modUi",
+        "description": "A premium UI kit/library built for React with Tailwind CSS and Lucide React. Designed for repacing the old html components with awesome, new, modern and aesthetic components.",
+        "tags": [
+            "Next.js",
+            "React"
+        ],
+        "githubUrl": "https://github.com/Sankarshan-T/herowebkit",
+        "liveUrl": "https://modui-uikit.vercel.app/"
+    },
+    {
+        "title": "Corenote",
+        "description": "An overengineered notetaking app like notion",
+        "tags": [
+            "Next.js",
+            "Convex",
+            "TypeScript"
+        ],
+        "githubUrl": "https://github.com/Sankarshan-T/corenote",
+        "liveUrl": "https://core-note.vercel.app/"
+    },
+    {
+        "title": "Image to Sketch",
+        "description": "This program is a simple desktop app that turns your photos into high-quality pencil sketches using Python.",
+        "tags": [
+            "Python",
+            "Cv2"
+        ],
+        "githubUrl": "https://github.com/Sankarshan-T/imageToSketch",
+        "liveUrl": "https://github.com/Sankarshan-T/imageToSketch/releases/tag/v1.0.0"
+    },
+    {
+        "title": "TimeShift",
+        "description": "This program is a simple desktop app that turns your photos into high-quality pencil sketches using Python.",
+        "tags": [
+            "HTML",
+            "JavaScript",
+            "CSS",
+            "Used AI"
+        ],
+        "githubUrl": "https://github.com/Sankarshan-T/TimeShift",
+        "liveUrl": "https://timeshift-ten.vercel.app/"
+    },
+    {
+        "title": "Glow Tab",
+        "description": "This is a Chrome extension that transforms your new tab into an awesome page",
+        "tags": [
+            "HTML",
+            "CSS",
+            "JavaScript",
+            "Used AI"
+        ],
+        "githubUrl": "https://github.com/Sankarshan-T/GlowTab",
+        "liveUrl": "https://glow-tab.vercel.app/"
     }
 ]
