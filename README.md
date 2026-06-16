@@ -1,43 +1,21 @@
-# Astro Starter Kit: Minimal
+# My portfolio
+This has been a long pending task of mine: make a portfolio site. Idk why but i never made this when i started coding lol. So i decided to make this as a sample project to learn astro.
 
-```sh
-npm create astro@latest -- --template minimal
-```
+## Heres what pages exist:
+- index.astro (the main page with all the subsections)
+- projects.astro (the page that contains all my projects)
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Sections:
+- Home (the home page)
+- About (about me)
+- Languages (languages I know)
+- Projects (some of my cool projects)
 
-## 🚀 Project Structure
+## Tech stack
+- Astro (main framework)
+- Typescript (some components)
+- Tailwind CSS (styling)
 
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
-
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
-
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
-
-Any static assets, like images, can be placed in the `public/` directory.
-
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Gallery
+<img width="1918" height="966" alt="image" src="https://github.com/user-attachments/assets/3427af10-2633-4754-aa00-914dfcbdebe9" />
+<img width="1915" height="962" alt="image" src="https://github.com/user-attachments/assets/05a7f953-8783-4b5d-b854-fbbdea7e4353" />
