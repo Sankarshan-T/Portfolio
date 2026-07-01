@@ -1,0 +1,61 @@
+---
+import { db, GuestBook, desc } from "astro:db";
+
+
+if (Astro.request.method === "POST") {
+    try {
+        const formData = await Astro.request.formData();
+        const author = formData.get("author");
+        const content = formData.get("content");
+
+        if (typeof author === "string" && typeof content === "string") {
+            await db.insert(GuestBook).values({ author, content });
+
+            Astro.response.status = 303;
+            Astro.response.headers.set("Location", Astro.url.pathname);
+        }
+    } catch (error) {
+        console.error("Failed to insert guestbook entry:", error);
+    }
+}
+
+const guestBook = await db
+    .select()
+    .from(GuestBook)
+    .orderBy(desc(GuestBook.timestamp));
+---
+
+<dl>
+    {
+        guestBook.map(({ author, content, timestamp }) => (
+            <div>
+                <dt>
+                    <strong>{author}</strong>
+                </dt>
+                <dd>{content}</dd>
+                {timestamp && (
+                    <dd>
+                        <small>{timestamp.toLocaleDateString()}</small>
+                    </dd>
+                )}
+            </div>
+        ))
+    }
+</dl>
+
+<hr />
+
+<form method="POST">
+    <label for="author">
+        Author
+        <input id="author" name="author" required />
+    </label>
+
+    <label for="content">
+        Content
+        <textarea id="content" name="content" required></textarea>
+    </label>
+
+    <button type="reset">Cancel</button>
+    <button type="submit">Leave your mark</button>
+</form>

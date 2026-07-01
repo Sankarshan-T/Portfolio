@@ -1,5 +1,5 @@
 ---
-import { Home, Info, Languages, Blocks, Contact } from "@lucide/astro";
+import { Home, Info, Languages, Blocks, Contact, User } from "@lucide/astro";
 import Hint from "./hint";
 ---
 
@@ -14,7 +14,7 @@ import Hint from "./hint";
     >
         <Hint
             label="Home"
-            side="top"
+            side="right"
             md-side="right"
             sideOffset={10}
             client:load
@@ -28,7 +28,7 @@ import Hint from "./hint";
 
         <Hint
             label="About"
-            side="top"
+            side="right"
             md-side="right"
             sideOffset={10}
             client:load
@@ -42,7 +42,7 @@ import Hint from "./hint";
 
         <Hint
             label="Languages"
-            side="top"
+            side="right"
             md-side="right"
             sideOffset={10}
             client:load
@@ -56,7 +56,7 @@ import Hint from "./hint";
 
         <Hint
             label="Projects"
-            side="top"
+            side="right"
             md-side="right"
             sideOffset={10}
             client:load
@@ -67,6 +67,18 @@ import Hint from "./hint";
                 />
             </a>
         </Hint>
-
+        <Hint
+            label="Guestbook"
+            side="right"
+            md-side="right"
+            sideOffset={10}
+            client:load
+        >
+            <a href="/#guestbook">
+                <User
+                    class="hover:-translate-y-0.75 text-blue-700 hover:text-blue-900 transition size-5 sm:size-6"
+                />
+            </a>
+        </Hint>
     </div>
 </aside>
