@@ -1,7 +1,6 @@
 ---
 import { db, GuestBook, desc } from "astro:db";
 
-
 if (Astro.request.method === "POST") {
     try {
         const formData = await Astro.request.formData();
@@ -25,6 +24,23 @@ const guestBook = await db
     .orderBy(desc(GuestBook.timestamp));
 ---
 
+<form method="POST" class="w-full bg-blue-900">
+    <label for="author">
+        Author
+        <input id="author" name="author" required />
+    </label>
+
+    <label for="content">
+        Content
+        <textarea id="content" name="content" required></textarea>
+    </label>
+
+    <button type="reset">Cancel</button>
+    <button type="submit">Leave your mark</button>
+</form>
+
+<hr />
+
 <dl>
     {
         guestBook.map(({ author, content, timestamp }) => (
@@ -42,20 +58,3 @@ const guestBook = await db
         ))
     }
 </dl>
-
-<hr />
-
-<form method="POST">
-    <label for="author">
-        Author
-        <input id="author" name="author" required />
-    </label>
-
-    <label for="content">
-        Content
-        <textarea id="content" name="content" required></textarea>
-    </label>
-
-    <button type="reset">Cancel</button>
-    <button type="submit">Leave your mark</button>
-</form>
