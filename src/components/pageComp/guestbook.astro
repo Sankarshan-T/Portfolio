@@ -1,4 +1,6 @@
 ---
+export const prerender = false;
+
 import { db } from "@/db";
 import { guestBook } from "@/db/schema";
 import { desc } from "drizzle-orm";
@@ -48,7 +50,7 @@ const entries = await db
                             </div>
 
                             <span class="text-xs text-slate-800">
-                                {entry.createdAt.toLocaleDateString()}
+                                {new Date(entry.createdAt).toLocaleDateString()}
                             </span>
                         </div>
 
