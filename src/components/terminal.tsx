@@ -208,7 +208,6 @@ export default function Terminal() {
                 <input
                     value={input}
                     disabled={mode === "saving"}
-                    autoFocus
                     onChange={(e) => setInput(e.target.value)}
                     className="flex-1 bg-transparent text-slate-300 outline-none"
                     onKeyDown={(e) => {
