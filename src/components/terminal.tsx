@@ -91,6 +91,8 @@ export default function Terminal() {
             print("1 file changed, 1 insertion(+)", "success");
             print("");
             print("Guestbook updated!", "success");
+
+            window.location.reload();
         }
         catch {
             print("");
