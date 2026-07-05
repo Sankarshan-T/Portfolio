@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 type TerminalMode =
     | "idle"
@@ -28,17 +28,18 @@ const INITIAL_HISTORY: TerminalLine[] = [
 
 export default function Terminal() {
     const [history, setHistory] = useState(INITIAL_HISTORY);
-
     const [input, setInput] = useState("");
-
-    const [cancelled, setCancelled] = useState(false);
-
     const [mode, setMode] = useState<TerminalMode>("idle");
-
     const [guestbook, setGuestbook] = useState({
         name: "",
         message: "",
     });
+
+    const bottomRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    }, [history]);
 
     function print(
         text: string,
@@ -54,7 +55,6 @@ export default function Terminal() {
         }));
 
         print("Leave a message:");
-
         setMode("waiting-message");
     }
 
@@ -145,7 +145,6 @@ export default function Terminal() {
         });
 
         setMode("idle");
-
         setInput("");
     }
 
@@ -188,44 +187,44 @@ export default function Terminal() {
         setInput("");
     }
 
-
-
     return (
-
-        <div className="w-full bg-slate-950 text-green-400 font-mono p-4 rounded-xl">
-            <div className="mb-3 flex gap-2">
+        <div className="w-full max-w-3xl mx-auto bg-slate-950 text-green-400 font-mono p-4 rounded-xl shadow-2xl flex flex-col h-30vh sm:h-[35vh]">
+            <div className="mb-3 flex gap-2 shrink-0">
                 <div className="h-3 w-3 rounded-full bg-red-500"></div>
                 <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
                 <div className="h-3 w-3 rounded-full bg-green-500"></div>
             </div>
-            {history.map((line, index) => (
-                <div key={index} className={COLORS[line.type]}>
-                    {line.text}
+
+            <div className="flex-1 overflow-y-auto pr-1 space-y-1 text-sm md:text-base wrap-break-word min-h-0 custom-scrollbar">
+                {history.map((line, index) => (
+                    <div key={index} className={`${COLORS[line.type]} whitespace-pre-wrap`}>
+                        {line.text}
+                    </div>
+                ))}
+
+                <div className="flex gap-2 pt-1">
+                    <span className="text-slate-300 shrink-0 select-none">$</span>
+                    <input
+                        value={input}
+                        disabled={mode === "saving"}
+                        onChange={(e) => setInput(e.target.value)}
+                        className="flex-1 bg-transparent text-slate-300 outline-none min-w-0"
+                        autoFocus
+                        onKeyDown={(e) => {
+                            if (e.ctrlKey && e.key.toLowerCase() === "c") {
+                                e.preventDefault();
+                                handleCtrlC();
+                                return;
+                            }
+
+                            if (e.key === "Enter") {
+                                handleEnter();
+                            }
+                        }}
+                    />
                 </div>
-            ))}
-
-            <div className="flex gap-2">
-                <span className="text-slate-300">$</span>
-
-                <input
-                    value={input}
-                    disabled={mode === "saving"}
-                    onChange={(e) => setInput(e.target.value)}
-                    className="flex-1 bg-transparent text-slate-300 outline-none"
-                    onKeyDown={(e) => {
-                        if (e.ctrlKey && e.key.toLowerCase() === "c") {
-                            e.preventDefault();
-                            handleCtrlC();
-                            return;
-                        }
-
-                        if (e.key === "Enter") {
-                            handleEnter();
-                        }
-                    }}
-                />
+                <div ref={bottomRef} />
             </div>
         </div>
-
     );
 }
