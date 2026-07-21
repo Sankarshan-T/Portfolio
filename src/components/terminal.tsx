@@ -209,7 +209,6 @@ export default function Terminal() {
                         disabled={mode === "saving"}
                         onChange={(e) => setInput(e.target.value)}
                         className="flex-1 bg-transparent text-slate-300 outline-none min-w-0"
-                        autoFocus
                         onKeyDown={(e) => {
                             if (e.ctrlKey && e.key.toLowerCase() === "c") {
                                 e.preventDefault();
