@@ -37,9 +37,7 @@ export default function Terminal() {
 
     const bottomRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        bottomRef.current?.scrollIntoView({ behavior: "smooth" });
-    }, [history]);
+
 
     function print(
         text: string,
